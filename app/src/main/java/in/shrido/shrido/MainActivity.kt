@@ -1,6 +1,8 @@
 package `in`.shrido.shrido
 
 import android.os.Bundle
+import android.view.View
+import android.widget.EditText
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -16,5 +18,12 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+    }
+
+    fun Onclick_Search(view: View) {
+        val source= findViewById<EditText>(R.id.Source)
+        val Dest = findViewById<EditText>(R.id.Destination)
+
+        //val myData = RideData.RideDetails( sourcetext.toString(),desttext.toString())
     }
 }

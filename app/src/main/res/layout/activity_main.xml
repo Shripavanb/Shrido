@@ -7,13 +7,76 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Welcome to Shrido"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="150dp"
+            android:layout_marginTop="0dp"
+            android:text="Welcome to Shrido"
+            android:textColor="#FF5722" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginTop="50dp"
+            android:text="From"
+            android:layout_marginLeft="5dp"
+            />
+        <EditText
+            android:id="@+id/Source"
+            android:layout_width="260dp"
+            android:layout_height="50dp"
+            android:hint="Where are going from"
+            android:inputType="text"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="28dp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginTop="100dp"
+            android:text="To"
+            android:layout_marginLeft="5dp"
+            />
+        <EditText
+            android:id="@+id/Destination"
+            android:layout_width="260dp"
+            android:layout_height="50dp"
+            android:hint="Where are going"
+            android:inputType="text"
+            android:layout_marginTop="100dp"
+            android:layout_marginLeft="43dp"/>
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Submit"
+            android:layout_marginLeft="300dp"
+            android:layout_marginTop="170dp"
+            android:onClick="Onclick_Search"
+            />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

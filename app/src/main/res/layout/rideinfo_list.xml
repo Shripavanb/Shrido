@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:id="@+id/layout_List"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/cardview_shadow_start_color"
+        >
+<!--        <TextView-->
+<!--            android:id="@+id/date_List"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:padding="5dp"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:gravity="2"-->
+<!--            android:text="Today"-->
+<!--            android:textSize="20sp" />-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="3pt">
+            <TextView
+                android:id="@+id/sour_List"
+                android:layout_width="59dp"
+                android:layout_height="wrap_content"
+                android:text="HYD"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="To"
+                android:textColor="@color/design_default_color_error"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/dest_List"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="Armoor"
+                android:textSize="20sp" />
+            <TextView
+                android:id="@+id/Time_List"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:layout_gravity="left"
+                android:text="5:pm"
+                android:layout_marginLeft="170dp"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+<!--        <TextView-->
+<!--            android:id="@+id/via_List"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:padding="5dp"-->
+<!--            android:layout_gravity="left"-->
+<!--            android:text="via Kamareddy"-->
+<!--            android:textSize="20sp"-->
+<!--            android:layout_marginLeft="8sp"/>-->
+
+<!--        <Button-->
+<!--            android:id="@+id/contact_List"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:padding="5dp"-->
+<!--            android:layout_gravity="right"-->
+<!--            android:gravity="2"-->
+<!--            android:text="Contact"-->
+<!--            android:textSize="20sp" />-->
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -4,17 +4,18 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.View
-import android.widget.ArrayAdapter
 import android.widget.EditText
 import android.widget.ListView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 
 
 class MainActivity : AppCompatActivity() {
 
+
+    private lateinit var listView: ListView
+    private lateinit var adapter1: MyCustomAdapter
+    private val itemList = mutableListOf<RideData>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,14 +26,26 @@ class MainActivity : AppCompatActivity() {
 //            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
 //            insets
 //        }
-val listView: ListView = findViewById(R.id.main_list)
-        val listItems = arrayListOf("Hyderabad",
-            "Armoor",
-            "Nizamabad",
-            "Kamareddy")
 
-        val listAdapter= ArrayAdapter(this, android.R.layout.simple_list_item_1,listItems)
-        listView.adapter = listAdapter
+        val listView: ListView = findViewById(R.id.main_list)
+        //listView = findViewById(R.id.main_list) // Assuming you have a ListView in activity_main.xml
+
+//        val listItems = arrayListOf("Hyderabad",
+//            "Armoor",
+//            "Nizamabad",
+//            "Kamareddy")
+//
+//        val listAdapter= ArrayAdapter(this, android.R.layout.list_content,listItems)
+//        listView.adapter = listAdapter
+
+        // Initialize with some data
+        itemList.add(RideData("Hyd", "Armor"))
+        itemList.add(RideData("Nzb", "Hyd"))
+        itemList.add(RideData("Nirmal", "Hyd"))
+        itemList.add(RideData("Hyd", "Adilabad"))
+
+        adapter1 = MyCustomAdapter(this,itemList)
+        listView.adapter = adapter1
     }
 
     fun Onclick_Search(view: View) {

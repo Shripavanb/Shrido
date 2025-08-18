@@ -43,6 +43,11 @@ class MainActivity : AppCompatActivity() {
         itemList.add(RideData("13July25","Nzb", "Hyd","10Am","Siddhipet"))
         itemList.add(RideData(currentDate,"Nirmal", "Hyd","1Pm","Armoor"))
         itemList.add(RideData("14July25","Hyd", "Adilabad","6Pm","Kamareddy"))
+        itemList.add(RideData("16July25","NZB", "Adilabad","6Pm","Kamareddy"))
+        itemList.add(RideData("16July25","NZB", "Adilabad","6Pm","Kamareddy"))
+        itemList.add(RideData("16July25","NZB", "Adilabad","6Pm","Kamareddy"))
+        itemList.add(RideData("20July25","JBS", "Adilabad","6Pm","Kamareddy"))
+
 
         adapter1 = MyCustomAdapter(this,itemList)
         listView.adapter = adapter1
@@ -58,6 +63,10 @@ class MainActivity : AppCompatActivity() {
      override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.mymenu)
         return super.onCreateOptionsMenu(menu)
+    }
+
+    fun Contact_onClick(view: View) {
+
     }
 }
 

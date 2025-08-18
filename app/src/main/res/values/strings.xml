@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Shrido</string>
+    <string name="today_name">Today</string>
+
 </resources>

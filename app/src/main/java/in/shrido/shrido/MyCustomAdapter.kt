@@ -1,6 +1,7 @@
 package `in`.shrido.shrido
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -44,6 +45,16 @@ class MyCustomAdapter (private val context: Context,private val dataList: Mutabl
             // You can access 'currentItem' and 'position' for specific item data
             Toast.makeText(context, "Button clicked for item: ${item.source_data}", Toast.LENGTH_SHORT).show()
             // Perform other actions like navigating to a new activity, updating data, etc.
+
+            // Create an Intent to navigate to the new screen
+            val intent = Intent(context, RideDetails::class.java)
+            // Pass data to the new screen (e.g., item ID)
+            intent.putExtra("datedata", item.date_data)
+            intent.putExtra("sourcedata", item.source_data)
+            intent.putExtra("destidata",item.desti_data)
+            intent.putExtra("timedata",item.time_data)
+            intent.putExtra("viadata",item.via_data)
+            context.startActivity(intent)
         }
         
 

@@ -5,7 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
+import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 
 
@@ -29,12 +31,20 @@ class MyCustomAdapter (private val context: Context,private val dataList: Mutabl
         view = convertView
             holder= view.tag as ViewHolder
         }
-            val item = dataList[position]
+        val item = dataList[position]
         holder.datetextView.text = item.date_data
         holder.sourceTextView.text=item.source_data
         holder.destinationTextView.text=item.desti_data
         holder.timeTextView.text=item.time_data
         holder.viaTextView.text = item.via_data
+
+        // Set OnClickListener for the button
+        view.findViewById<Button>(R.id.contact_List).setOnClickListener {
+            // Handle button click here
+            // You can access 'currentItem' and 'position' for specific item data
+            Toast.makeText(context, "Button clicked for item: ${item.source_data}", Toast.LENGTH_SHORT).show()
+            // Perform other actions like navigating to a new activity, updating data, etc.
+        }
         
 
         return view

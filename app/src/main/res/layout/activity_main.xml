@@ -1,30 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res"
     xmlns:tools="http://schemas.android.com/tools"
-
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginTop="0dp"
     tools:context=".MainActivity">
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-        <include layout="@layout/header_main" />
+    <include layout="@layout/header_main" />
+<!--    <LinearLayout-->
+<!--        android:id="@+id/linearLayout"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:orientation="vertical">-->
+<!--        <include layout="@layout/header_main" />-->
 
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="150dp"
-            android:layout_marginTop="0dp"
-            android:text="Welcome to Shrido"
-            android:textColor="@color/black" />
-    </LinearLayout>
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginLeft="150dp"-->
+<!--            android:layout_marginTop="0dp"-->
+<!--            android:text="Welcome to Shrido"-->
+<!--            android:textColor="@color/black" />-->
+<!--    </LinearLayout>-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -32,7 +31,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="50dp"
-            android:layout_marginTop="150dp"
+            android:layout_marginTop="100dp"
             android:text="From"
             android:layout_marginLeft="5dp"
             />
@@ -42,7 +41,7 @@
             android:layout_height="50dp"
             android:hint="Where are going from"
             android:inputType="text"
-            android:layout_marginTop="150dp"
+            android:layout_marginTop="100dp"
             android:layout_marginLeft="28dp"/>
     </LinearLayout>
     <LinearLayout
@@ -52,7 +51,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="50dp"
-            android:layout_marginTop="200dp"
+            android:layout_marginTop="150dp"
             android:text="To"
             android:layout_marginLeft="5dp"
             />
@@ -62,7 +61,7 @@
             android:layout_height="50dp"
             android:hint="Where are going"
             android:inputType="text"
-            android:layout_marginTop="200dp"
+            android:layout_marginTop="150dp"
             android:layout_marginLeft="43dp"/>
 
 
@@ -77,7 +76,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="300dp"
-            android:layout_marginTop="260dp"
+            android:layout_marginTop="190dp"
             android:layout_weight="1"
             android:onClick="Onclick_Search"
             android:text="Submit" />
@@ -93,7 +92,7 @@
                 android:id="@+id/main_list"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="310dp"
+                android:layout_marginTop="235dp"
                 >
 <!--                        <include layout="@layout/rideinfo_list"-->
 <!--                            android:layout_width="match_parent"-->

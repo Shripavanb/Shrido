@@ -28,6 +28,7 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
 
+
         val listView: ListView = findViewById(R.id.main_list)
         //listView = findViewById(R.id.main_list) // Assuming you have a ListView in activity_main.xml
 

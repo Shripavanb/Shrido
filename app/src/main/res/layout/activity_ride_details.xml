@@ -1,18 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/riderdetails_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginTop="0dp"
     tools:context=".RideDetails">
+    <include layout="@layout/base_activity" />
 
-
-    <ListView
-        android:id="@+id/selected_rideder_details"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="match_parent"
+        android:layout_marginTop="70dp"
+        android:background="@color/cardview_shadow_start_color"
+           app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="59dp">
 
-    </ListView>
+        <ListView
+            android:id="@+id/selected_rideder_details"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@color/design_default_color_secondary_variant"
+            android:orientation="vertical">
 
-</LinearLayout>
+        </ListView>
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

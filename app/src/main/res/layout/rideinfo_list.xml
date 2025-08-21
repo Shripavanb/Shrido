@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <LinearLayout
         android:id="@+id/layout_List"
         android:layout_width="match_parent"
@@ -9,6 +10,7 @@
         android:orientation="vertical"
         android:background="@drawable/listview_shape"
         >
+
         <TextView
             android:id="@+id/date_List"
             android:layout_width="wrap_content"

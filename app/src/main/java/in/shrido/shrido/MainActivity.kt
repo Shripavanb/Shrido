@@ -10,10 +10,15 @@ import android.widget.EditText
 import android.widget.ListView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import com.android.identity.cbor.DataItem
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 import java.util.Date
 import java.util.SimpleTimeZone
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
+import java.io.IOException
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -22,6 +27,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var listView: ListView
     private lateinit var adapter1: MyCustomAdapter
     private val itemList = mutableListOf<RideData>()
+    private val itemList2 = mutableListOf<RideData>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -50,7 +56,27 @@ class MainActivity : AppCompatActivity() {
         itemList.add(RideData("20July25","JBS", "Adilabad","6Pm","Kamareddy"))
 
 
-        adapter1 = MyCustomAdapter(this,itemList)
+        //Reading items from json file
+
+            val jsonString: String
+            try {
+                jsonString = applicationContext.assets.open("rideinputdata.json")
+                    .bufferedReader().use { it.readText() }
+            } catch (ioException: IOException) {
+                ioException.printStackTrace()
+                return
+            }
+
+            val gson = Gson()
+            val listType = object : TypeToken<List<RideData>>() {}.type
+            val itemList2: List<RideData> = gson.fromJson(jsonString, listType)
+
+            // Now 'itemList' contains your parsed data, ready to be used
+            // e.g., for populating a RecyclerView
+
+
+
+        adapter1 = MyCustomAdapter(this, itemList2 as MutableList<RideData>)
         listView.adapter = adapter1
     }
 

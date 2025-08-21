@@ -7,5 +7,6 @@ data class RideData(
     val source_data: String,
     val desti_data: String,
     val time_data: String,
-    val via_data:String
+    val via_data:String,
+    var isContactButtonclicked: Boolean =false
 )

@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.FrameLayout
 import androidx.appcompat.app.AppCompatActivity
-import `in`.shrido.shrido.R
 
 abstract class BaseActivity : AppCompatActivity() {
 
@@ -14,19 +13,19 @@ abstract class BaseActivity : AppCompatActivity() {
     }
 
     override fun setContentView(layoutResID: Int) {
-        val fullLayout = layoutInflater.inflate(R.layout.header_main, null) as ViewGroup
+        val fullLayout = layoutInflater.inflate(R.layout.base_activity, null) as ViewGroup
         val headerContainer = fullLayout.findViewById<FrameLayout>(R.id.header_framelayout)
         val contentContainer = fullLayout.findViewById<FrameLayout>(R.id.content_framelayout)
-        val navContainer = fullLayout.findViewById<FrameLayout>(R.id.nav_framelayout)
+        //val navContainer = fullLayout.findViewById<BaseActivity>(R.id.base_bottom_nav)
 
         // Inflate the header and add it to the header container
-        LayoutInflater.from(this).inflate(R.layout.header_main, headerContainer, true)
+        LayoutInflater.from(this).inflate(R.layout.base_activity, headerContainer, true)
 
         // Inflate the activity's specific content and add it to the content container
-        LayoutInflater.from(this).inflate(R.layout.header_main, contentContainer, true)
+        LayoutInflater.from(this).inflate(R.layout.base_activity, contentContainer, true)
 
         // Inflate the activity's specific content and add it to the content container
-        LayoutInflater.from(this).inflate(R.layout.header_main, navContainer, true)
+        //LayoutInflater.from(this).inflate(R.layout.base_activity, navContainer, true)
 
         super.setContentView(fullLayout)
     }

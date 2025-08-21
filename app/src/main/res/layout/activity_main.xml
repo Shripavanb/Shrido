@@ -6,24 +6,7 @@
     android:layout_height="match_parent"
     android:layout_marginTop="0dp"
     tools:context=".MainActivity">
-
-    <include layout="@layout/header_main" />
-<!--    <LinearLayout-->
-<!--        android:id="@+id/linearLayout"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:orientation="vertical">-->
-<!--        <include layout="@layout/header_main" />-->
-
-
-<!--        <TextView-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginLeft="150dp"-->
-<!--            android:layout_marginTop="0dp"-->
-<!--            android:text="Welcome to Shrido"-->
-<!--            android:textColor="@color/black" />-->
-<!--    </LinearLayout>-->
+    <include layout="@layout/base_activity" />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -63,14 +46,11 @@
             android:inputType="text"
             android:layout_marginTop="150dp"
             android:layout_marginLeft="43dp"/>
-
-
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
         <Button
             android:id="@+id/button"
             android:layout_width="wrap_content"
@@ -79,7 +59,7 @@
             android:layout_marginTop="190dp"
             android:layout_weight="1"
             android:onClick="Onclick_Search"
-            android:text="Submit" />
+            android:text="Search" />
 
     </LinearLayout>
     <LinearLayout
@@ -88,18 +68,11 @@
         android:orientation="horizontal"
         tools:ignore="MissingConstraints">
         <!--List View-->
-            <ListView
-                android:id="@+id/main_list"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="235dp"
-                >
-<!--                        <include layout="@layout/rideinfo_list"-->
-<!--                            android:layout_width="match_parent"-->
-<!--                            android:layout_height="wrap_content"-->
-<!--                          />-->
-            </ListView>
-
+        <ListView
+            android:id="@+id/main_list"
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            android:layout_marginTop="235dp"></ListView>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

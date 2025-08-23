@@ -1,10 +1,16 @@
 package `in`.shrido.shrido
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ListView
+import androidx.fragment.app.Fragment
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
+import java.text.SimpleDateFormat
+import java.util.Date
+
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -21,11 +27,16 @@ class Home : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+    private val gutceurrentDate: String = "12/08/2025"
+    private lateinit var listView: ListView
+    private lateinit var adapter1: MyCustomAdapter
+    private val itemList = mutableListOf<RideData>()
+    private val itemList2 = mutableListOf<RideData>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+
         }
     }
 
@@ -34,7 +45,40 @@ class Home : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false)
+        var view = inflater.inflate(R.layout.fragment_home, container, false)
+
+         listView = view.findViewById<ListView>(R.id.main_list) // Assuming you have a ListView in activity_main.xml
+
+        // Date Format
+//            val sdf = SimpleDateFormat("dd/M/yyyy")
+//            val currentDate = sdf.format(Date())
+//            System.out.println(" Todays DATE is  "+currentDate)
+
+        val jsonString: String
+        // Open the asset file as an InputStream
+        val inputStream = requireContext().assets.open("rideinputdata.json")
+        // Get the size of the file
+        val size = inputStream.available()
+        // Create a byte array to hold the data
+        val buffer = ByteArray(size)
+        // Read the data into the buffer
+        inputStream.read(buffer)
+        // Close the input stream
+        inputStream.close()
+        // Convert the byte array to a String
+        jsonString = String(buffer, Charsets.UTF_8)
+
+        val gson = Gson()
+        val listType = object : TypeToken<List<RideData>>() {}.type
+        val itemList2: List<RideData> = gson.fromJson(jsonString, listType)
+
+        val adapter1 = MyCustomAdapter(requireContext(), itemList2 as MutableList<RideData>)
+        listView.setAdapter(adapter1)
+
+        listView.adapter = adapter1
+
+
+        return view
     }
 
     companion object {

@@ -51,6 +51,7 @@ dependencies {
     implementation("com.google.code.gson:gson:2.13.1")
     implementation("com.google.android.material:material:1.12.0")
     implementation("androidx.fragment:fragment-ktx:1.8.9")
+    implementation ("androidx.viewpager2:viewpager2:1.1.0")
     implementation(libs.identity.jvm)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

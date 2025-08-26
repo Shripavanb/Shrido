@@ -48,7 +48,7 @@ class MainActivity : AppCompatActivity() {
                     true
                 }
                 R.id.profile -> {
-                    replaceFragment(Profile())
+                    replaceFragment(Profile_rideinputdata())
                     true
                 }
                 R.id.settings -> {

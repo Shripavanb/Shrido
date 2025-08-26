@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Profile_rideinputdata">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/layout_List"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="100dp"
+            android:background="@drawable/listview_shape"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Upload Ride Info"
+                android:layout_gravity="center"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                />
+
+
+            <EditText
+                android:id="@+id/date_List"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:layout_gravity="center"
+                android:text="Enter date"
+                android:textStyle="bold"
+                android:textSize="30dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="3pt">
+                <EditText
+                    android:id="@+id/sour_List"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="HYD"
+                    android:layout_weight="1"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="To"
+                    android:textStyle="bold"
+                    android:textColor="@color/design_default_color_error"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/dest_List"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Armoor"
+                    android:layout_marginLeft="5pt"
+                    android:layout_weight="1"
+                    android:textSize="20sp" />
+                <EditText
+                    android:id="@+id/Time_List"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Time"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="160dp"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="via"
+                    android:textColor="@color/design_default_color_error"
+                    android:textSize="20sp"
+                    android:layout_weight="1"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/via_List"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_weight="2"
+                    android:text="Kamareddy"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Seats"
+                    android:textColor="@color/design_default_color_error"
+                    android:textSize="20sp"
+                    android:layout_weight="1"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/seat_available"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_weight="2"
+                    android:text="4"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Call"
+                    android:textColor="@color/design_default_color_error"
+                    android:textSize="20sp"
+                    android:layout_weight="1"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/mobile_no"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_weight="2"
+                    android:text="8374499001"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/ride_input_submit"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Go live " />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</FrameLayout>

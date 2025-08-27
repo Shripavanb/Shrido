@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.Toast
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -33,8 +35,19 @@ class Profile_rideinputdata : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+       val view = inflater.inflate(R.layout.fragment_profile_rideinputdata, container, false)
+
+        val rideinput_submit = view.findViewById<Button>(R.id.ride_input_submit)
+
+        rideinput_submit.setOnClickListener {
+        Toast.makeText(context,"RideInput submit utton clicked ", Toast.LENGTH_SHORT).show()
+       // submit input data toJSon file
+
+        }
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile_rideinputdata, container, false)
+        return view
     }
 
     companion object {

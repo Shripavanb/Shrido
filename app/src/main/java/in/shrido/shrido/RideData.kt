@@ -1,7 +1,9 @@
 package `in`.shrido.shrido
 
 import android.R
+import kotlinx.serialization.Serializable
 
+@Serializable
 data class RideData(
     val date_data: String,
     val source_data: String,

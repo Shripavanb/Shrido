@@ -9,12 +9,11 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import androidx.core.graphics.convertTo
 import androidx.fragment.app.Fragment
-import java.io.BufferedReader
 import java.io.File
-import java.io.FileReader
 import org.json.JSONObject
+import java.io.BufferedWriter
+import java.io.FileWriter
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -72,24 +71,19 @@ class Profile_rideinputdata : Fragment() {
             Log.d(TAG, "jsonObject---Logggg--Data  :${jsonObject}")
             Toast.makeText(context,"jsonObject-----Data  :${jsonObject}", Toast.LENGTH_SHORT).show()
 
-//            val filename = "userdata.json"
-//            val file = File(requireContext().getFilesDir(), filename)
-//            val fileReader = FileReader(file)
-//            val bufferedReader = BufferedReader(fileReader)
-//            val stringBuilder = StringBuilder()
-//            var line = bufferedReader.readLine()
-//            while (line != null) {
-//                stringBuilder.append(line).append("\n")
-//                line = bufferedReader.readLine()
-//            }
-//            bufferedReader.close()
-//
-//
-//
-//            // This responce will have Json Format String
-//            val responce = stringBuilder.toString()
-//        Toast.makeText(context,"RideInput submit utton clicked :${responce}", Toast.LENGTH_SHORT).show()
-       // submit input data toJSon file
+            val filename = "userdata.json"
+// Convert JsonObject to String Format
+            val userString = jsonObject.toString() // Assuming jsonObject is defined
+// Define the File Path and its Name
+            val file = File(context?.filesDir, filename)
+            BufferedWriter(FileWriter(file)).use { bufferedWriter ->
+                bufferedWriter.write(userString)
+                bufferedWriter.close();
+             }
+            //file.writeText(userString)
+
+            Log.d(TAG, "via---Logggg--Data  :${file.writeText(userString)}")
+            Log.d(TAG, "via---Logggg--Data  :${file.writeText(userString)}")
 //------------------------------------------------------------------------------------------
         }
 

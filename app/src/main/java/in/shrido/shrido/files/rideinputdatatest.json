@@ -1,0 +1,16 @@
+[
+  {
+    "date_data": "21082025",
+     "source_data": "Hyd",
+     "desti_data": "Armor",
+     "time_data": "5Pm",
+     "via_data":"Kamareddy"
+  },
+  {
+    "date_data": "22082025",
+    "source_data": "NZB",
+    "desti_data": "Hyd",
+    "time_data": "2Pm",
+    "via_data":"Kamareddy"
+  }
+]

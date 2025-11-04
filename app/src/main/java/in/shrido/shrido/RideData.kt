@@ -3,7 +3,7 @@ package `in`.shrido.shrido
 import android.R
 import kotlinx.serialization.Serializable
 
-@Serializable
+
 data class RideData(
     val date_data: String,
     val source_data: String,
@@ -12,3 +12,9 @@ data class RideData(
     val via_data:String,
     var isContactButtonclicked: Boolean =false
 )
+
+
+
+object JsonConstants {
+    const val JSON_FILE_NAME = "user_data.json"
+}

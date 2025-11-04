@@ -1,6 +1,7 @@
 package `in`.shrido.shrido
 
 import android.content.ContentValues.TAG
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -14,6 +15,9 @@ import java.io.File
 import org.json.JSONObject
 import java.io.BufferedWriter
 import java.io.FileWriter
+import com.google.gson.Gson
+import java.io.FileOutputStream
+
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -25,6 +29,8 @@ private const val ARG_PARAM2 = "param2"
  * Use the [Profile_rideinputdata.newInstance] factory method to
  * create an instance of this fragment.
  */
+
+@kotlinx.serialization.Serializable
 class Profile_rideinputdata : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
@@ -54,14 +60,15 @@ class Profile_rideinputdata : Fragment() {
             val ride_date= view.findViewById<EditText>(R.id.date_List)
             val ride_source = view.findViewById<EditText>(R.id.sour_List)
             val ride_desti = view.findViewById<EditText>(R.id.dest_List)
+            val ride_time = view.findViewById<EditText>(R.id.time_List)
             val ride_via=view.findViewById<EditText>(R.id.via_List)
 
             val jsonObject = JSONObject().apply {
-                put("Date", ride_date.text.toString())
-                put("Source",ride_source.text.toString() )
-                put("Destination", ride_desti.text.toString())
-                put("via", ride_via.text.toString())
-//                put("Time", view.findViewById<EditText>(R.id.tim))
+                put("date_data", ride_date.text.toString())
+                put("source_data",ride_source.text.toString() )
+                put("desti_data", ride_desti.text.toString())
+                put("time_data", ride_time.text.toString())
+                put("via_data", ride_via.text.toString())
             }
             Log.d(TAG, "date---Logggg--Data  :${ride_date.text.toString()}")
             Log.d(TAG, "source---Logggg--Data  :${ride_source.text.toString()}")
@@ -71,11 +78,10 @@ class Profile_rideinputdata : Fragment() {
             Log.d(TAG, "jsonObject---Logggg--Data  :${jsonObject}")
             Toast.makeText(context,"jsonObject-----Data  :${jsonObject}", Toast.LENGTH_SHORT).show()
 
-            val filename = "userdata.json"
-// Convert JsonObject to String Format
+           // Convert JsonObject to String Format
             val userString = jsonObject.toString() // Assuming jsonObject is defined
-// Define the File Path and its Name
-            val file = File(context?.filesDir, filename)
+            // Define the File Path and its Name
+            val file = File(context?.filesDir, fileName)
             BufferedWriter(FileWriter(file)).use { bufferedWriter ->
                 bufferedWriter.write(userString)
                 bufferedWriter.close();
@@ -84,12 +90,50 @@ class Profile_rideinputdata : Fragment() {
 
             Log.d(TAG, "via---Logggg--Data  :${file.writeText(userString)}")
             Log.d(TAG, "via---Logggg--Data  :${file.writeText(userString)}")
+
+
+            //New Code
+            var fileName2 = "newdata.json"
+            writeJsonToFile(getContext(), fileName2, userString)
+            //val jsonString = Json.encodeToString(user)
+            //writeJsonToFile(jsonObject, filename2,requireContext())
+
+
+
+
 //------------------------------------------------------------------------------------------
         }
 
         // Inflate the layout for this fragment
         return view
     }
+//Main one
+    fun writeJsonToFile(context: Context?, fileName: String, jsonString: String) {
+        var fos: FileOutputStream? = null
+        try {
+            fos = context?.openFileOutput(fileName, Context.MODE_PRIVATE)
+            fos?.write(jsonString.toByteArray())
+            fos?.close()
+        } catch (e: Exception) {
+            e.printStackTrace()
+        } finally {
+            fos?.close()
+        }
+    }
+    fun writeJsonToFile(users: JSONObject, fileName: String, context: Context) {
+
+        val gson = Gson()
+        val jsonString = gson.toJson(users)
+
+        val file = File(context.filesDir, fileName)
+        file.writeText(jsonString)
+        Log.d(TAG, "Newwwvia---Logggg--Data  :${file.writeText(jsonString)}")
+    }
+    // Example usage in an Activity or Fragment:
+    // val users = listOf(User(1, "Alice", "alice@example.com"), User(2, "Bob", "bob@example.com"))
+    // writeJsonToFile(users, "my_data.json", applicationContext)
+
+
 
 
 //

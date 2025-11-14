@@ -27,12 +27,13 @@ class RideDetails : AppCompatActivity() {
         val receivedIntent: Intent = intent
 
         // Access extra data from the intent
+        val localint = "01"
         val date = receivedIntent.getStringExtra("datedata")
         val source = receivedIntent.getStringExtra("sourcedata")
         val destina = receivedIntent.getStringExtra("destidata")
         val time = receivedIntent.getStringExtra("timedata")
         val via = receivedIntent.getStringExtra("viadata")
-        itemList.add(RideData(date.toString(), source.toString(),destina.toString(),time.toString(),via.toString()))
+        itemList.add(RideData( date.toString(), source.toString(),destina.toString(),time.toString(),via.toString()))
 
         adapter1 = MyCustomAdapter(this,itemList)
         listView.adapter = adapter1

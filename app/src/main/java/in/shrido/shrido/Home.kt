@@ -95,8 +95,7 @@ class Home : Fragment() {
              count++
 
             val sampleJson = """
-            [ 
-            {
+                        [{
     "date_data": "26082025",
      "source_data": "Sec",
      "desti_data": "Armor",
@@ -123,7 +122,7 @@ class Home : Fragment() {
 //        jsonContent?.let {
 //            val gson = Gson()
 //            val myObject = gson.fromJson(jsonContent, RideData::class.java)
-//            Log.d("JSON_READ", "Source: ${myObject.source_data}, via: ${myObject.via_data}")
+            //Log.d("JSON_READ", "Source: ${myObject.source_data}, via: ${myObject.via_data}")
 //        }
             // jsonString=myObject.toString()
             //-------------------------------------------
